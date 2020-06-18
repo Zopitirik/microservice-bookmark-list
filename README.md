@@ -1,68 +1,52 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Microservice Bookmark List
 
-## Available Scripts
+Purpose of this project: There are so many services that I develop and maintain. I can't remember domain names of each of these services.
+When I use browser's bookmark functionality, I lost between tabs that I have to open at least two or three to find what I am looking for. 
+Also I wanted to see which developers are interested in that project.
 
-In the project directory, you can run:
+## Road
 
-### `yarn start`
+1. My first need was to see swagger apis. So both project name & variables about swagger.
+2. At day 2, I realized that I can put anything on this bookmark list and decided to change project name and variables name. But in order for this job not to move away from what I really need, I left project name as Microservice.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## appSettings.json Data Structure
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Name
 
-### `yarn test`
+You can put your own app name to `Name` and it will be shown at top of sidebar. 
+Description of `Pages` is below.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```json
+{ 
+    "Name": "My App",
+    "Pages": [],
+}
+```
 
-### `yarn build`
+### Pages
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can see full data structure below.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+`Id` should be unique and integer. Otherwise, program will not work.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```json
+{ 
+    "Id": "1",
+    "Name": "All Together",
+    "Description": "Lorem ipsum dolor sit amet",
+    "SourceLink": "https://petstore.swagger.io",
+    "ExternalLink": "https://www.google.com",
+    "Peoples": [ "Jack", "John" ]
+}
+```
 
-### `yarn eject`
+`Description | SourceLink | ExternalLink | Peoples` are optional and they will not display on ui if they are not exist or do not have any content.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+One of page object with minimum data:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```json
+{ 
+    "Id": "1",
+    "Name": "All Together"
+}
+```
